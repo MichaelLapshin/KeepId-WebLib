@@ -9,6 +9,6 @@ Repository for storing the code of the javascript library used to initiate KeepI
      `npm install keepid`
 2. Use the client
      ```
-     const keepid = requre('keepid')
+     const keepid = require('keepid')
      const client = keepid('OrganizationPIN', 'RequesterID', 'TemplateType')
      ```

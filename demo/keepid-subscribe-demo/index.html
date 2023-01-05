@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Subscribe KeepId Demo</title>
+                
+        <!-- KeepId -->
+        <link href="css/button.css" rel="stylesheet" />
+        <link href="css/popup.css" rel="stylesheet" />
+        <script src="js/logic.js" type="text/javascript"> </script>
+
+    </head>
+    <body>
+        <div id="keepid-popup" class="keepid-popup">
+            <a href="https://www.w3schools.com" target="_blank">
+                <img id="logo" src="images/KeepId Logo - Light - 680x328.png" alt="KeepId" class="keepid-logo-link" /></a>
+            <br>
+            
+            <input id="keepid-pin-input" type="text" name="user_pin" minlength="6" maxlength="6" class="keepid-pin-input"
+                oninput="inputSetBlack()" onfocusout="inputUpdateStatus()" />
+            <br>
+
+            <a id="keepid-info-text" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="keepid-info-text" >
+                Don't have a KeepId? Create it in just one step!
+            </a>
+        </div>
+
+        <br>
+
+        <button id="keepid-button" class="keepid-button" onclick="keepidButtonClick()">
+            <span id="keepid-text" class="keepid-text">
+                Subscribe with
+            </span>
+            <img id="keepid-image"
+                 alt="KeepId"
+                 src="images/KeepId Logo - Light - 680x328.png"
+                 class="keepid-image"
+            />
+            
+        </button>
+
+        <br>
+
+        <button id="keepid-button" class="keepid-button" onclick="keepidButtonClick()">
+            <div id="keepid-text" class="keepid-text">
+                Subscribe with
+            </div>
+            <img id="keepid-image"
+                 alt="KeepId"
+                 src="images/Id Logo - Light - 232x264.png"
+                 class="keepid-image"
+            />
+        </button>
+
+        <br>
+
+        <button id="keepid-button" class="keepid-button" onclick="keepidButtonClick()">
+            <img id="keepid-image"
+                 alt="KeepId"
+                 src="images/Id Logo - Light - 232x264.png"
+                 class="keepid-image"
+            />
+        </button>
+
+        <br>
+
+        <button id="keepid-button" class="keepid-button" onclick="keepidButtonClick()">
+            <img id="keepid-image"
+                 alt="KeepId"
+                 src="images/KeepId Logo - Light - 680x328.png"
+                 class="keepid-image"
+            />
+        </button>
+
+    </body>
+</html>

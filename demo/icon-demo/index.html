@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>KeepId</title>
+        <title>Enter KeepId Demo</title>
         
         <!-- Styles -->
         <link href="css/styles.css" rel="stylesheet" />
 
         <!-- Logic -->
         <script>
+            // Cookie logic
+            function setUserPin(value, expiry) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expiry * 24 * 60 * 60 * 1000));
+                var expires = "expires="+date.toUTCString();
+                document.cookie = "user_pin=" + value + ";" + expires + ";path=/keepid/";
+            }
+
+            function getUserPin() {
+                let name = "keepid/user_pin=";
+                let spli = document.cookie.split(';');
+                for(var j = 0; j < spli.length; j++) {
+                    let char = spli[j];
+                    while (char.charAt(0) == ' ') {
+                        char = char.substring(1);
+                    }
+                    if (char.indexOf(name) == 0) {
+                        return char.substring(name.length, char.length);
+                    }
+                }
+                return "";
+            }
+
+            var stored_user_pin = getUserPin();
+            if (stored_user_pin != "") {
+                document.getElementById("keepid-input").value = stored_user_pin;
+            }
+
+            // KeepId logic
             function isInputValid(user_pin) {
                 if (/^[a-zA-Z0-9]{6}$/.test(user_pin)) { // Match 6 alpha-numeric chars
                     return true;
@@ -39,10 +68,12 @@
                 var user_pin = input_box.value;
                 
                 // Validate input
-                inputUpdateStatus()
+                inputUpdateStatus();
                 if (!isInputValid(user_pin)) {
                     return;
                 }
+
+                setUserPin(user_pin);
 
                 // Send HTTP Request
                 const Http = new XMLHttpRequest();
@@ -51,7 +82,7 @@
                 Http.send();
                 Http.onreadystatechange=(e)=>{
                     console.log(Http.responsetex)
-                }
+                };
             }
         </script>
     </head>

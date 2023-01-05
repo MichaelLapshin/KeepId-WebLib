@@ -1,0 +1,52 @@
+.keepid-popup {
+    display: none;
+    width: fit-content;
+
+    margin: 0px;
+    padding: 6px;
+    text-align: center;
+
+    border: 2px solid black;
+    border-radius: 10px;
+    background: rgb(250, 240, 230);
+    background-color: rgb(250, 240, 230);
+
+    /* Overlay effects */
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    margin: 5px;
+}
+
+.keepid-logo-link {
+    width: 200px;
+    height: auto;
+}
+
+.keepid-pin-input {
+    height: auto;
+    width: 6ch;
+
+    margin-inline: 10px;
+    padding-inline: 8px;
+
+    font-family: monospace;
+    font-size: 54px;
+    text-transform: uppercase;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    background-color:white;
+    /* background-color:antiquewhite; */
+    border: 1.5px solid black;
+}
+
+.keepid-info-text {
+    height: 100%;
+    width: auto;
+
+    color: black;
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

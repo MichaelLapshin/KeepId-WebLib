@@ -1,0 +1,47 @@
+.keepid-button {
+    width: min-content;
+    height: 40px;
+
+    padding: 3.5px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(250, 240, 230);
+
+    display: flex;
+
+    /* button animation parameters */
+    cursor: pointer;
+    transition: 0.01s;
+    box-shadow: 1px 2px rgb(150, 150, 150);
+}
+
+.keepid-button:hover {
+    background-color: rgb(255, 200, 146);
+}
+
+.keepid-button:active {
+    background-color: rgb(255, 178, 100);
+    box-shadow: 0.5px 1px #666;
+    transform: translate(0.5px, 1px);
+}
+
+.keepid-text {
+    height: 100%;
+    width: auto;
+
+    color: black;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    white-space: nowrap;
+    line-height: 160%;
+    padding-right: 0.8ch;
+}
+
+.keepid-image {
+    width: auto;
+    height: 100%;
+}
