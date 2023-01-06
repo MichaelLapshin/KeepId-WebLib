@@ -7,21 +7,21 @@ function isUserPinValid(user_pin) {
 }
 
 // Button logic
-function keepidButtonClick() {
+function keepIdButtonClick(element) {
     var input_box = document.getElementById("keepid-pin-input");
     var user_pin = input_box.value;
 
     // Update button colouring
-    document.getElementById("keepid-button").style.borderWidth = "2px";
-    document.getElementById("keepid-button").style.height = "42px";
+    element.style.borderWidth = "2px";
+    element.style.height = "42px";
     if (!isUserPinValid(user_pin)) {
-        document.getElementById("keepid-button").style.borderColor = "red";
+        element.style.borderColor = "red";
         
         // Open KeepId popup window
         document.getElementById("keepid-popup").style.display = "block";
         return
     }
-    document.getElementById("keepid-button").style.borderColor = "green";
+    element.style.borderColor = "green";
 
 
     // Send HTTP Request
@@ -35,21 +35,37 @@ function keepidButtonClick() {
 }
 
 // Popup logic
-function inputSetBlack() {
-    document.getElementById("keepid-pin-input").style.color = "black";
+function inputSetBlack(element) {
+    element.style.color = "black";
+
+    var buttons = document.getElementsByClassName("keepid-button");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons.item(i).style.borderColor = "black";
+        buttons.item(i).style.borderWidth = "1px";
+    }
 }
 
-function inputUpdateStatus() {
-    var input_box = document.getElementById("keepid-pin-input");
-    var user_pin = input_box.value;
+function inputUpdateStatus(element) {
+    var user_pin = element.value;
 
     if (/^ +$/.test(user_pin) || user_pin == '') {
-        input_box.style.color = "black";
+        element.style.color = "black";
     } else if (isUserPinValid(user_pin)) {
-        input_box.style.color = "green";
+        element.style.color = "green";
     } else if (/^[a-zA-Z0-9]+$/.test(user_pin)) {
-        input_box.style.color = "orange";
+        element.style.color = "orange";
     } else {
-        input_box.style.color = "red";
+        element.style.color = "red";
     }
+}
+
+// KeepId input size adjustment
+function maximizeKeepIdInput() {
+    document.getElementById("keepid-popup").style.display = "block";
+    document.getElementById("keepid-popup-min").style.display = "none";
+}
+
+function minimizeKeepIdInput() {
+    document.getElementById("keepid-popup").style.display = "none";
+    document.getElementById("keepid-popup-min").style.display = "block";
 }

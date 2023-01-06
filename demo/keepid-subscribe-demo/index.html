@@ -10,29 +10,33 @@
 
     </head>
     <body>
+        <button id="keepid-popup-min" onclick="maximizeKeepIdInput()" class="keepid-popup-min"><img src="images/Id Logo.png" style="height: 100%; width: auto;" />
+            <img src="images/Maximize Icon.png" style="height: 100%; width: auto;" /></button>
+
         <div id="keepid-popup" class="keepid-popup">
-            <a href="https://www.w3schools.com" target="_blank">
-                <img id="logo" src="images/KeepId Logo - Light - 680x328.png" alt="KeepId" class="keepid-logo-link" /></a>
+            <button onclick="minimizeKeepIdInput()" class="keepid-min-button"><img src="images/Minimize Icon.png" style="height: 100%; width: auto;"/></button>
+
+            <a href="https://www.w3schools.com" target="_blank"><img id="logo" src="images/KeepId Logo.png" alt="KeepId" class="keepid-logo-link" /></a>
             <br>
             
             <input id="keepid-pin-input" type="text" name="user_pin" minlength="6" maxlength="6" class="keepid-pin-input"
-                oninput="inputSetBlack()" onfocusout="inputUpdateStatus()" />
+                oninput="inputSetBlack(this);" onfocusout="inputUpdateStatus(this);" />
             <br>
 
             <a id="keepid-info-text" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="keepid-info-text" >
-                Don't have a KeepId? Create it in just one step!
+                Don't have a KeepId?<br>Create it in just one step!
             </a>
         </div>
 
         <br>
 
-        <button id="keepid-button" class="keepid-button" onclick="keepidButtonClick()">
+        <button id="keepid-button" class="keepid-button" onclick="keepIdButtonClick(this);">
             <span id="keepid-text" class="keepid-text">
                 Subscribe with
             </span>
             <img id="keepid-image"
                  alt="KeepId"
-                 src="images/KeepId Logo - Light - 680x328.png"
+                 src="images/KeepId Logo.png"
                  class="keepid-image"
             />
             
@@ -40,33 +44,33 @@
 
         <br>
 
-        <button id="keepid-button" class="keepid-button" onclick="keepidButtonClick()">
+        <button id="keepid-button" class="keepid-button" onclick="keepIdButtonClick(this);">
             <div id="keepid-text" class="keepid-text">
                 Subscribe with
             </div>
             <img id="keepid-image"
                  alt="KeepId"
-                 src="images/Id Logo - Light - 232x264.png"
+                 src="images/Id Logo.png"
                  class="keepid-image"
             />
         </button>
 
         <br>
 
-        <button id="keepid-button" class="keepid-button" onclick="keepidButtonClick()">
+        <button id="keepid-button" class="keepid-button" onclick="keepIdButtonClick(this);">
             <img id="keepid-image"
                  alt="KeepId"
-                 src="images/Id Logo - Light - 232x264.png"
+                 src="images/Id Logo.png"
                  class="keepid-image"
             />
         </button>
 
         <br>
 
-        <button id="keepid-button" class="keepid-button" onclick="keepidButtonClick()">
+        <button id="keepid-button" class="keepid-button" onclick="keepIdButtonClick(this);">
             <img id="keepid-image"
                  alt="KeepId"
-                 src="images/KeepId Logo - Light - 680x328.png"
+                 src="images/KeepId Logo.png"
                  class="keepid-image"
             />
         </button>
